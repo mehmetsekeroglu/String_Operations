@@ -35,13 +35,23 @@ for (let number = 2; number < 100; number++) {
 console.log(primeNumber);
 
 //Password
-let characterList = "1234567890qwertzuiopasdfghjklöyxcvbnm,.+_-£$/()"
+let characterList = "asdfghjklqwertyuiopzxcvbnm"
+let bigCharacterList = "ASDFGHJKLWERTYUIOZXCVBNM"
+let number = "0123456789"
+let special = "+*ç%&/()=?"
+
 for(passwordIndex = 1; passwordIndex<51; passwordIndex++){
-    let characterNumber = Math.floor((Math.random()*8)+8);
+    let characterNumber = Math.round((Math.random()*2)+2)
     let password=""
     for (let index = 0; index < characterNumber; index++) {
     let choseCharacter = Math.floor((Math.random()*characterList.length));
     password+= characterList.substr(choseCharacter,1); 
+    let choseBigCharacter = Math.floor((Math.random()*bigCharacterList.length));
+    password+= bigCharacterList.substr(choseBigCharacter,1);
+    let choseNumber = Math.floor((Math.random()*number.length));
+    password+= number.substr(choseNumber,1);
+    let choseSpecial = Math.floor((Math.random()*special.length));
+    password+= special.substr(choseSpecial,1);     
 }
  console.log(`${passwordIndex}.Password : ${password}`);
 }
