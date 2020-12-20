@@ -18,18 +18,18 @@ for (let index = 1; index <= 100; index++) {
 }
 console.log(numberList.toString());
 
-//Prime Number
+//Prime numberCharacter
 let primeNumber = []
-for (let number = 2; number < 100; number++) {
+for (let numberCharacter = 2; numberCharacter < 100; numberCharacter++) {
     let primeControl = true;
-    for (let divisive = 2; divisive < number; divisive++) {
-        if (number % divisive === 0) {
+    for (let divisive = 2; divisive < numberCharacter; divisive++) {
+        if (numberCharacter % divisive === 0) {
             primeControl = false
             break;
         }
     }
     if (primeControl) {
-        primeNumber.push(number);
+        primeNumber.push(numberCharacter);
     }
 }
 console.log(primeNumber);
@@ -37,8 +37,8 @@ console.log(primeNumber);
 //Password
 let characterList = "asdfghjklqwertyuiopzxcvbnm"
 let bigCharacterList = "ASDFGHJKLWERTYUIOZXCVBNM"
-let number = "0123456789"
-let special = "+*ç%&/()=?"
+let numberCharacter = "0123456789"
+let specialCharacter = "+*ç%&/()=?"
 
 for(passwordIndex = 1; passwordIndex<51; passwordIndex++){
     let characterNumber = Math.round((Math.random()*2)+2)
@@ -48,10 +48,10 @@ for(passwordIndex = 1; passwordIndex<51; passwordIndex++){
     password+= characterList.substr(choseCharacter,1); 
     let choseBigCharacter = Math.floor((Math.random()*bigCharacterList.length));
     password+= bigCharacterList.substr(choseBigCharacter,1);
-    let choseNumber = Math.floor((Math.random()*number.length));
-    password+= number.substr(choseNumber,1);
-    let choseSpecial = Math.floor((Math.random()*special.length));
-    password+= special.substr(choseSpecial,1);     
+    let choseNumber = Math.floor((Math.random()*numberCharacter.length));
+    password+= numberCharacter.substr(choseNumber,1);
+    let choseSpecial = Math.floor((Math.random()*specialCharacter.length));
+    password+= specialCharacter.substr(choseSpecial,1);     
 }
  console.log(`${passwordIndex}.Password : ${password}`);
 }
